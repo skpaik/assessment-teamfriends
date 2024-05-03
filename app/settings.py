@@ -126,7 +126,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+cron_schedule_1 = "0 8 * * *"
 
 CRONJOBS = [
-    ('*/1 * * * *', 'birthdaywish.cron.print_hello')
+    (cron_schedule_1, 'birthdaywish.cron.cron_1')
 ]

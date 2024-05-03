@@ -11,7 +11,10 @@ def send_birthday_emails():
     today = timezone.now().date()
     current_year = today.year
 
-    # birthdays_today = Customer.objects.filter(birthday__month=today.month, birthday__day=today.day)
+    birthdays_today = Customer.objects.filter(birthday__month=today.month,
+                                              birthday__day=today.day,
+                                              wish_year__lt=current_year)
+
     birthdays_today = Customer.objects.all()
 
     for customer in birthdays_today:

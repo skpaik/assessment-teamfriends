@@ -1,21 +1,12 @@
 # Team Friends
 
-### Setup the project
+### Set up the project
 - Clone the project
 - Open code in your favourite editor
 - Open Terminal on `_bash` folder of the project and run
 ```shell
 ./install.sh
 ```
-
-
-### Run Redis
-- Keep running the docker in your local machine
-- Open Terminal on `_bash` folder of the project and run
-  ```shell
-  ./docker.sh
-  ```
-- This command will install and run redis in docker for your local computer
 
 
 ### Run the project
@@ -36,8 +27,12 @@
 ./seed.sh
 ```
 
-### Run celery schedular
+### Run a schedular
 - Open Terminal on `_bash` folder of the project and run
 ```shell
 ./schedular.sh
 ```
+- You can change cron schedule at `app/settings.py` line `131`
+- Example
+- `*/1 * * * *` Run schedule every minute
+- `0 8 * * *` Run schedule every day 8 am
