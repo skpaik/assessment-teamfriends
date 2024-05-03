@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django_crontab',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_crontab',
     'customer',
-    'birthdaywish'
+    'birthdaywish',
+    'cronjob'
 ]
 
 MIDDLEWARE = [
@@ -127,7 +128,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 cron_schedule_1 = "0 8 * * *"
+cron_schedule_2 = "*/1 * * * *"
 
 CRONJOBS = [
-    (cron_schedule_1, 'birthdaywish.cron.cron_1')
+    (cron_schedule_1, 'cronjob.cron.cron_1')
 ]

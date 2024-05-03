@@ -15,8 +15,6 @@ def send_birthday_emails():
                                               birthday__day=today.day,
                                               wish_year__lt=current_year)
 
-    birthdays_today = Customer.objects.all()
-
     for customer in birthdays_today:
         subject = "Happy Birthday!"
         message = f"Dear {customer.name},\nWe wish you a very Happy Birthday!"
