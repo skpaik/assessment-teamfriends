@@ -2,6 +2,7 @@ import random
 
 from django.utils import timezone
 
+from birthdaywish.tasks import send_birthday_emails
 from customer.models import Customer
 
 
@@ -12,5 +13,5 @@ def print_hello():
     Customer.objects.create(name="Abul Mal" + number,
                             email=number + "email@gmail.com",
                             birthday=timezone.now(),
-                            wish_year=7 + int(number)
-                            )
+                            wish_year=7 + int(number))
+    send_birthday_emails()
