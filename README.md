@@ -32,7 +32,7 @@
 ```shell
 ./schedular.sh
 ```
-- You can change cron schedule at `app/settings.py` line `131`
+- You can change cron schedule at `app/settings.py` line `130 to 135`
 - Example
 - `*/1 * * * *` Run schedule every minute
 - `0 8 * * *` Run schedule every day 8 am
